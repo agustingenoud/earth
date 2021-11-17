@@ -80,7 +80,7 @@ services:
     depends_on:
       - master
     ports:
-      - 8888:8888
+      - 80:8888
     volumes:
       - ./jupyter/notebook:/notebook
       - ./dataset:/dataset
