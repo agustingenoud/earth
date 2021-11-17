@@ -1,7 +1,7 @@
 version: "3"
 services:
   master:
-    container_name: master
+    container_name: earth_master
     image: arjones/pyspark:2.4.5
     restart: always
     command: ["/opt/spark/sbin/start-master.sh"]
@@ -18,7 +18,7 @@ services:
       - ./dataset:/dataset
 
   worker1:
-    container_name: worker1
+    container_name: earth_worker1
     image: arjones/pyspark:2.4.5
     restart: always
     command:
@@ -45,7 +45,7 @@ services:
       - ./dataset:/dataset
 
   worker2:
-    container_name: worker2
+    container_name: earth_worker2
     image: arjones/pyspark:2.4.5
     restart: always
     command:
@@ -72,7 +72,7 @@ services:
       - ./dataset:/dataset
 
   jupyter:
-    container_name: jupyter
+    container_name: earth_jupyter
     image: arjones/pyspark:2.4.5
     restart: always
     environment:
