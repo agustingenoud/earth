@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Entrega TP - Seminario de Tópicos Avanzados en Datos Complejos.</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lululu</title>
+    <style>
+        body {
+            font-family: monospace;
+            margin-top: 8vh;
+            margin-left: 10vw;
+            max-width: 60vw;
+        }
+
+        p,
+        em,
+        ol {
+            line-height: 2.2rem;
+            font-size: 1rem;
+        }
+
+        .encabezado {
+            margin: 2vmin;
+        }
+
+        .contenido {
+            margin-top: 8vh;
+            margin-left: 3vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="encabezado">
+        <h1> Entrega TP - Seminario de Tópicos Avanzados en Datos Complejos</h1>
+        <h2> Especialización en ciencia de datos - ITBA. Cohorte 2020.</h2>
+        <h3> Alumno: Agustín Genoud</h3>
+    </div>
+
+    <div class="contenido">
+
+        <h2>Indicaciones</h2>
+        <p>
+            Al ejecutar el comando <em>'./control-env.sh start'</em> en la consola debería de imprimirse el token para
+            Jupyter notebook. Igualmente puede obtenerse a partir del siguiente comando: <em>./'control-env.sh
+                token'</em>
+            <a href="/" onclick="javascript:event.target.port=8088" target="_blank">Superset</a>
+        </p>
+
+        <p>Pasos a llevar adelante:</br>
+            <ol>
+                <li>
+                    Correr script <em>(01-argentinaDatosWrite)</em> en <a href=href="/"
+                        onclick="javascript:event.target.port=8888" target="_blank">jupyter notebook</a> para ETL
+                </li>
+                <li>
+                    Correr script <em>(02-argentinaDatosAdd)</em> en <a href=href="/"
+                        onclick="javascript:event.target.port=8888" target="_blank">jupyter notebook</a> para generar
+                    las tablas secundarias.
+                </li>
+                <li>
+                    Correr el comando
+                <li><em>'./control-env.sh superset-init'</em></li> para inicializar el sistema para los dashboards.
+                </li>
+                <li>
+                    Una vez ejecutados los procesos a través de los notebooks e inicializado superset ingresar al
+                    visualizador de <a href="/" onclick="javascript:event.target.port=8088" target="_blank">Superset</a>
+                    <a href="http://localhost:8088/r/7">DASHBOARD</a>
+                    para las
+                    visualizaciones. En caso de necesitar re-conectar la base de datos para las visualizaciones obtener
+                    la ip de la misma a través del siguiente comando <em>'./control-env.sh superset-ip'</em>
+                </li>
+            </ol>
+        </p>
+
+        <h2>Funciones disponibles</h2>
+        <p>
+            <ul>
+                <li><em>'./control-env.sh start'</em></li>
+                <li><em>'./control-env.sh stop'</em></li>
+                <li><em>'./control-env.sh token'</em></li>
+                <li><em>'./control-env.sh superset-init'</em></li>
+                <li><em>'./control-env.sh superset-ip'</em></li>
+                <li><em>'./control-env.sh cleanup'</em></li>
+            </ul>
+        </p>
+
+    </div>
+
+</body>
+
+</html>
