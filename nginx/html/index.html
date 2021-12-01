@@ -11,7 +11,7 @@
             font-family: monospace;
             margin-top: 8vh;
             margin-left: 10vw;
-            max-width: 60vw;
+            max-width: 80vw;
         }
 
         p,
@@ -29,13 +29,17 @@
             margin-top: 8vh;
             margin-left: 3vw;
         }
+
+        img {
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
     <div class="encabezado">
         <h1> Entrega TP - Seminario de Tópicos Avanzados en Datos Complejos</h1>
-        <h2> Especialización en ciencia de datos - ITBA. Cohorte 2020.</h2>
+        <h2> Especialización en Ciencia de Datos - ITBA. Cohorte 2020.</h2>
         <h3> Alumno: Agustín Genoud</h3>
     </div>
 
@@ -62,15 +66,19 @@
                 </li>
                 <li>
                     Correr el comando
-                <li><em>'./control-env.sh superset-init'</em></li> para inicializar el sistema para los dashboards.
+                    <em>'./control-env.sh superset-init'</em> para inicializar los dashboards.
                 </li>
                 <li>
-                    Una vez ejecutados los procesos a través de los notebooks e inicializado superset ingresar al
-                    visualizador de <a href="/" onclick="javascript:event.target.port=8088" target="_blank">Superset</a>
-                    <a href="http://localhost:8088/r/7">DASHBOARD</a>
-                    para las
-                    visualizaciones. En caso de necesitar re-conectar la base de datos para las visualizaciones obtener
-                    la ip de la misma a través del siguiente comando <em>'./control-env.sh superset-ip'</em>
+                    Una vez ejecutados los procesos a través de los notebooks e inicializado superset ingresar a <a
+                        href="/" onclick="javascript:event.target.port=8088" target="_blank">Superset</a>
+                    para las visualizaciones con el user y password ingresado previamente con el comando
+                    'superset-init'. En caso de necesitar
+                    re-conectar la base de datos para las visualizaciones
+                    obtener
+                    la ip de la misma a través del siguiente comando <em>'./control-env.sh superset-ip'</em>.
+                </li>
+                <li>
+                    Ingresar al <a href="http://localhost:8088/r/7">DASHBOARD</a>.
                 </li>
             </ol>
         </p>
@@ -86,8 +94,18 @@
                 <li><em>'./control-env.sh cleanup'</em></li>
             </ul>
         </p>
+        <br>
+        <p>
+            <h3>Nota</h3>
+            Siendo las 22:23 del 30/11 tengo algunas dudas respecto de la persistencia de datos de superset, en caso de
+            que todo falle dejo algunas capturas de pantalla de los dashboards citando un tanto penoso 'it worked on my
+            machine'
+        </p>
 
+        <img src="./imgs/produccion-agricola-argentina-general-2021-12-01T01-06-06.376Z.jpg" alt="">
+        <img src="./imgs/produccion-agricola-argentina-general-2021-12-01T01-06-21.171Z.jpg" alt="">
     </div>
+
 
 </body>
 
