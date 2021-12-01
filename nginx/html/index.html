@@ -11,14 +11,22 @@
             font-family: monospace;
             margin-top: 8vh;
             margin-left: 10vw;
+            padding: 18px;
             max-width: 80vw;
+            border: solid 1px black;
+            border-radius: 24px;
         }
+
 
         p,
         em,
         ol {
             line-height: 2.2rem;
             font-size: 1rem;
+        }
+
+        p {
+            margin-top: 4%;
         }
 
         .encabezado {
@@ -32,6 +40,16 @@
 
         img {
             width: 100%;
+        }
+
+        li img {
+            width: 30%;
+            text-align: center;
+            margin: 30px;
+        }
+
+        li {
+            margin-top: 25px;
         }
     </style>
 </head>
@@ -55,12 +73,14 @@
         <p>Pasos a llevar adelante:</br>
             <ol>
                 <li>
-                    Correr script <em>(01-argentinaDatosWrite)</em> en <a href="/"
-                        onclick="javascript:event.target.port=8888" target="_blank">jupyter notebook</a> para ETL
+                    Correr script <em>(01-argentinaDatosWrite)</em> en <a
+                        href="http://localhost:8888/notebooks/01-argentinaDatosWrite.ipynb" target="_blank">jupyter
+                        notebook</a> para ETL
                 </li>
                 <li>
-                    Correr script <em>(02-argentinaDatosAdd)</em> en <a href="/"
-                        onclick="javascript:event.target.port=8888" target="_blank">jupyter notebook</a> para generar
+                    Correr script <em>(02-argentinaDatosAdd)</em> en <a
+                        href="http://localhost:8888/notebooks/02-argentinaDatosAdd.ipynb" target="_blank">jupyter
+                        notebook</a> para generar
                     las tablas secundarias.
                 </li>
                 <li>
@@ -72,12 +92,40 @@
                         href="/" onclick="javascript:event.target.port=8088" target="_blank">Superset</a>
                     para las visualizaciones con el user y password ingresado previamente con el comando
                     'superset-init'. En caso de necesitar
-                    re-conectar la base de datos para las visualizaciones
-                    obtener
-                    la ip de la misma a través del siguiente comando <em>'./control-env.sh superset-ip'</em>.
+                    re-conectar la base de datos para las visualizaciones ingresar a la <a
+                        href="http://localhost:8088/databaseview/list/" target=" _blank">lista de bases de datos</a>
+                    click en '+ Database' y agregar los siguientes campos:
+                    <br>
+                    <img src="./imgs/super-01.png" alt="">
+                    <br>
+                    - Ingresar Display Name: <em>PSQL_argentina_datos</em> <br>
+                    - Obtener la ip de postgres a través del siguiente comando <em>'./control-env.sh superset-ip'</em>.
+                    <br>
+                    - Pass para copiar: <em>p4ssW0rdP4r4Agr1cultur4</em> <br>
+                    Es posible hacer la conexión a través del siguiente comando URI (en [IP] ingresar lo obtenido con
+                    <em>./control-env.sh superset-ip</em> ): <br>
+                    <em>postgres://agricultura:p4ssW0rdP4r4Agr1cultur4@[IP]:5432/agricultura</em>
                 </li>
                 <li>
-                    Ingresar al <a href="http://localhost:8088/r/7">DASHBOARD</a>.
+                    En el menu principal desplegar 'Data' y seleccionar 'Datasets'. Ingresar las tablas de la base a
+                    partir de '+ Dataset'.
+                    <br>
+                    <img src="./imgs/super-02.png" alt="">
+                    <br>
+                    Agregar las tablas: <br>
+                    - argentina_datos <br>
+                    - cultivos_provincias <br>
+                    - prov_rinde <br>
+                    - soja_ba_rinde <br>
+                </li>
+                <li>
+                    Correr el comando <em>./control-env.sh superset-import</em>. El mismo va a importar el dashboard
+                    ubicado dentro
+                    del entorno docker en el path
+                    <em>/home/superset/dashboards</em> y dentro del repositorio en <em>./earth/superset/dashboards</em>.
+                </li>
+                <li>
+                    Acceder al <a href="http://localhost:8088/superset/dashboard/1/">dashboard</a>
                 </li>
             </ol>
         </p>
@@ -90,6 +138,7 @@
                 <li><em>'./control-env.sh token'</em></li>
                 <li><em>'./control-env.sh superset-init'</em></li>
                 <li><em>'./control-env.sh superset-ip'</em></li>
+                <li><em>'./control-env.sh superset-import'</em></li>
                 <li><em>'./control-env.sh cleanup'</em></li>
             </ul>
         </p>
@@ -104,7 +153,11 @@
         <img src="./imgs/produccion-agricola-argentina-general-2021-12-01T01-06-06.376Z.jpg" alt="">
         <img src="./imgs/produccion-agricola-argentina-general-2021-12-01T01-06-21.171Z.jpg" alt="">
     </div>
-
+    <p>
+        Contacto: <br>
+        agustingenoud {at} gmail <br>
+        agenoud {at} itba <br>
+    </p>
 
 </body>
 

@@ -29,6 +29,11 @@ function superset-ip {
   docker container inspect -f '{{ .NetworkSettings.Networks.earth_default.IPAddress }}' earth_postgres
 }
 
+function superset-import {
+  echo 'trying to import /home/superset/dashboards/earth_argentina.json dashboard . . .'
+  docker exec -it earth_superset superset import-dashboards -p /home/superset/dashboards/earth-argentina.json
+}
+
 function cleanup {
   echo "Removing volume"
   docker volume rm earth_postgres-data
@@ -55,6 +60,10 @@ superset-init)
 
 superset-ip)
   superset-ip
+  ;;
+
+superset-import)
+  superset-import
   ;;
 
 cleanup)
