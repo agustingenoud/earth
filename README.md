@@ -10,3 +10,5 @@ cd earth
 
 ./control-env.sh start
 ```
+
+This will open your favourite browser with some more data.
