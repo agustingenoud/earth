@@ -1,3 +1,3 @@
 # earth
 
-Earth is a small Docker system to analyze earth data with machine learning through Spark.
+Earth is a small Docker environment to analyze Argentina agriculture production data.
